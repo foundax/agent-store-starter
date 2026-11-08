@@ -5,6 +5,8 @@
 
 [English](README.md)
 
+[![skills.sh](https://skills.sh/b/foundax/agent-store-starter)](https://skills.sh/foundax/agent-store-starter/build-store)
+
 [![观看完整流程：coding agent 搭建店铺，Foundax 承接业务](docs/launch-poster.jpg)](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
 
 [观看 87 秒完整演示](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
@@ -67,10 +69,19 @@ agent 工作时会用到两个命令：
 在 [foundax.com](https://foundax.com) 的站点列表中导入生成的 zip（需要账号）。之后由 Foundax 负责收款、订单和托管，
 你可以继续用可视化编辑器或 agent 修改店铺。
 
-## 作为 Claude Code skill 使用
+## 安装为 agent skill
 
-把 [`skills/build-store`](skills/build-store) 复制到 `~/.claude/skills/`。之后对 Claude Code 说“参考 HUSH 做一个网店”，
-它会从正确的命令开始。
+在使用 Claude Code 或 Codex 的项目目录里安装 `build-store`：
+
+```bash
+npx skills add foundax/agent-store-starter --skill build-store
+```
+
+按提示选择 Claude Code 或 Codex。需要在所有项目中使用时，可以加上 `--global`。
+安装后，对 agent 说“参考 HUSH 做一个完整的网店”，它会带你完成参考选择、业务信息收集、搭建、检查和本地预览。
+
+[在 skills.sh 查看](https://skills.sh/foundax/agent-store-starter/build-store)。
+也可以手动把 [`skills/build-store`](skills/build-store) 复制到 `~/.claude/skills/`，供 Claude Code 使用。
 
 ## 环境要求
 

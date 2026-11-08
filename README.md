@@ -5,6 +5,8 @@ promotions and legal pages. Preview it locally with a working cart and simulated
 
 [简体中文](README.zh-CN.md)
 
+[![skills.sh](https://skills.sh/b/foundax/agent-store-starter)](https://skills.sh/foundax/agent-store-starter/build-store)
+
 [![Watch the complete workflow: your coding agent builds the store, Foundax runs the business](docs/launch-poster.jpg)](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
 
 [Watch the 87-second walkthrough](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
@@ -70,10 +72,21 @@ The preview stays on your machine: no real payments, orders or hosting. To launc
 and import the zip from the site list at [foundax.com](https://foundax.com) (requires an account). Foundax then
 handles checkout, orders and hosting, and you keep editing the store visually or with your agent.
 
-## Use it as a Claude Code skill
+## Install as an agent skill
 
-Copy [`skills/build-store`](skills/build-store) into `~/.claude/skills/`. Then ask Claude Code to "build an
-online store like HUSH" and it will start from the right command.
+Install `build-store` into the project where you use Claude Code or Codex:
+
+```bash
+npx skills add foundax/agent-store-starter --skill build-store
+```
+
+Choose Claude Code or Codex when prompted. Add `--global` if you want the skill available across projects.
+Then ask your agent to "build an online store inspired by HUSH". It will guide you through the reference,
+business facts, build, checks and local preview.
+
+[View on skills.sh](https://skills.sh/foundax/agent-store-starter/build-store).
+You can also install it manually for Claude Code by copying [`skills/build-store`](skills/build-store)
+into `~/.claude/skills/`.
 
 ## Requirements
 
