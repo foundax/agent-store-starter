@@ -14,5 +14,17 @@ description: Build a complete online store (pages, products, shipping, returns, 
    the user for. Never invent prices, policies or legal terms.
 4. Finish with `npx foundax@latest check` passing and the store open in `npx foundax@latest preview`.
    Report what you inspected in the preview and what remains unverified.
-5. Tell the user that the preview is local only, with payments and delivery simulated. To go live, they run
-   `npx foundax@latest pack` and import the zip from the site list at https://foundax.com, which requires an account.
+5. The preview is local only, with payments and delivery simulated. When the user wants to import, use the
+   authorization saved by their Foundax prompt. If this is a public `--showcase` build, ask them to sign in at
+   https://foundax.com, choose a target workspace in the reference's prompt dialog and authorize access. Run
+   `npx foundax@latest connect --origin https://foundax.com --code=THE_AUTHORIZATION` in the completed folder.
+6. Run `npx foundax@latest import --check`, repair reported source/data problems, then run `npx foundax@latest import`.
+   Repeat fixes and imports yourself within the authorized project. After a timeout, query `npx foundax@latest status`
+   before retrying. Keep the authorization file out of Git, source and packages. It lasts 7 days and can be revoked
+   in Settings → Security → Agent authorizations. Expired access, missing permissions, storage or subscription
+   requirements need the user's action; never purchase capacity or a plan without their instruction.
+7. Return the website editor address and explain remaining launch steps. Import changes real business data;
+   publishing is separate and requires publication entitlement and available site quota. Have the user configure
+   payments and domains, complete readiness checks and publish in Foundax. Manual zip import remains available
+   with `npx foundax@latest pack`.
+

@@ -63,8 +63,26 @@ agent 工作时会用到两个命令：
 
 ## 正式上线
 
-预览只在你的电脑上运行：没有真实支付、订单和托管。要上线，运行 `npx foundax@latest pack`，
-在 [foundax.com](https://foundax.com) 的站点列表中导入生成的 zip（需要账号）。之后由 Foundax 负责收款、订单和托管，
+预览只在你的电脑上运行，没有真实支付、订单和托管。要让 agent 直接导入，请登录
+[foundax.com](https://foundax.com)，打开参考案例的提示词弹窗，选择工作区并授权。
+使用已授权提示词初始化时，CLI 会自动保存授权；已有本地项目可以使用提示词里的来源地址与授权码连接，保留已制作的文件：
+
+```sh
+npx foundax@latest connect --origin https://foundax.com --code=你的授权码
+npx foundax@latest import --check
+npx foundax@latest import
+```
+
+服务端诊断直接返回 agent，便于修复并重试，无需手动来回上传。请求超时后先运行
+`npx foundax@latest status` 查询结果；导入提交后，CLI 会同步本地基础版本。
+授权仅限目标项目，有效期为 7 天，可在「设置 → 安全 → Agent 授权」或提示词弹窗中撤销。
+CLI 将授权保存在 `.foundax/authorization.json`，排除 Git 和站点包。
+
+导入会让商品、政策、促销等真实业务数据生效。网站发布仍需单独操作：审阅结果、配置收款和域名、
+完成上线检查后发布。托管需要发布权益及可用的网站数量额度，未订阅账户有 200 MB 共享存储，包含媒体和保留的快照。
+
+也可运行 `npx foundax@latest pack`，在 Foundax 站点列表手动导入 zip。
+之后由 Foundax 负责收款、订单和托管，
 你可以继续用可视化编辑器或 agent 修改店铺。
 
 ## 作为 Claude Code skill 使用
@@ -93,3 +111,4 @@ Node.js 20 或更高版本，macOS 或 Linux（arm64 或 x64）。Windows 请使
 - [Agent-Native Business Environments](https://github.com/foundax/agent-native-business-environments)：
   如何把业务系统变成 agent 可以探索和验证的环境。
 - [Agent Editable UI](https://github.com/foundax/agent-editable-ui)：让 agent 写出的页面保持可视化可编辑。
+
