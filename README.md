@@ -79,6 +79,11 @@ npx foundax@latest import
 
 Server diagnostics go straight to your agent so it can repair and retry without manual uploads. After a timeout,
 run `npx foundax@latest status` before retrying. The CLI synchronizes the local base revision after a committed import.
+If the merchant has edited the project meanwhile, pull its current version into a new folder and merge your changes;
+never change `baseRevisionId` to bypass a version conflict.
+Successful imports return `editorUrl`; recovered imports expose it under `result.editorUrl` in the status response.
+An agent with Computer Use or a browser tool can open that address in your signed-in browser and show the site in
+the editor. Otherwise, follow the returned link yourself.
 An authorization is scoped to one project, lasts 7 days and can be revoked from Settings → Security → Agent
 authorizations or the prompt dialog. The CLI keeps it in `.foundax/authorization.json`, excluded from Git and packages.
 

@@ -20,11 +20,17 @@ description: Build a complete online store (pages, products, shipping, returns, 
    `npx foundax@latest connect --origin https://foundax.com --code=THE_AUTHORIZATION` in the completed folder.
 6. Run `npx foundax@latest import --check`, repair reported source/data problems, then run `npx foundax@latest import`.
    Repeat fixes and imports yourself within the authorized project. After a timeout, query `npx foundax@latest status`
-   before retrying. Keep the authorization file out of Git, source and packages. It lasts 7 days and can be revoked
+   before retrying.
+   On `source_revision_conflict`, pull the current project into a new folder and merge your edits; never modify
+   `baseRevisionId` to bypass the conflict.
+   Keep the authorization file out of Git, source and packages. It lasts 7 days and can be revoked
    in Settings → Security → Agent authorizations. Expired access, missing permissions, storage or subscription
    requirements need the user's action; never purchase capacity or a plan without their instruction.
-7. Return the website editor address and explain remaining launch steps. Import changes real business data;
-   publishing is separate and requires publication entitlement and available site quota. Have the user configure
+7. Use the successful import's `editorUrl`, or `result.editorUrl` after status recovery. If Computer Use or a browser
+   tool is available, open it in the merchant's browser session and show the imported site in the editor. If sign-in
+   is required or no browser tool is available, share the editor link. Explain remaining launch steps.
+   Import changes real business data; publishing is separate and requires publication entitlement and available
+   site quota. Have the user configure
    payments and domains, complete readiness checks and publish in Foundax. Manual zip import remains available
    with `npx foundax@latest pack`.
 

@@ -75,6 +75,9 @@ npx foundax@latest import
 
 服务端诊断直接返回 agent，便于修复并重试，无需手动来回上传。请求超时后先运行
 `npx foundax@latest status` 查询结果；导入提交后，CLI 会同步本地基础版本。
+如果商家同时修改了网站，先把最新版本拉到新目录，再合并自己的修改；不要改动 `baseRevisionId` 绕过版本冲突。
+导入成功会返回 `editorUrl`，通过状态查询恢复的结果位于 `result.editorUrl`。
+有 Computer Use 或浏览器工具的 agent 可以直接在你已登录的浏览器中打开该地址，展示导入后的编辑器；也可自行打开返回的链接。
 授权仅限目标项目，有效期为 7 天，可在「设置 → 安全 → Agent 授权」或提示词弹窗中撤销。
 CLI 将授权保存在 `.foundax/authorization.json`，排除 Git 和站点包。
 
