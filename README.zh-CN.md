@@ -7,6 +7,22 @@
 
 [通过 skills.sh 安装 skill](https://skills.sh/foundax/agent-store-starter/build-store)
 
+## 开始
+
+在一个空文件夹里，把下面这段提示词发给你的 coding agent：
+
+```text
+参考 HUSH 做一个完整的网店。先在空文件夹里运行下面的命令，然后阅读 AGENTS.md。
+向我询问站点名称、市场、币种、语言和业务信息。完成站点、业务数据、本地预览和检查。
+学习参考案例的设计，并按我的品牌重新设计。
+
+npx foundax@latest init --showcase hush
+```
+
+把 `hush` 换成 `strata`，就从键盘店开始。也可以自己运行命令，再让 agent 打开生成的文件夹。
+
+## 演示
+
 [![观看完整流程：coding agent 搭建店铺，Foundax 承接业务](docs/launch-poster.jpg)](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
 
 [观看 87 秒完整演示](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
@@ -21,20 +37,6 @@ Nightfold 是虚构的演示店铺，视频中的支付流程使用测试环境�
 
 一次真实的 Codex 运行（约 8 分钟，已加速）：它参考 HUSH 和三张商品照片，做出了虚构的亚麻床品店 Nightfold。
 [查看原始搭建录屏](docs/build-demo.mp4)。
-
-## 开始
-
-在一个空文件夹里，把下面这段提示词发给你的 coding agent：
-
-```text
-参考 HUSH 做一个完整的网店。先在空文件夹里运行下面的命令，然后阅读 AGENTS.md。
-向我询问站点名称、市场、币种、语言和业务信息。完成站点、业务数据、本地预览和检查。
-学习参考案例的设计，并按我的品牌重新设计。
-
-npx foundax@latest init --showcase hush
-```
-
-把 `hush` 换成 `strata`，就从键盘店开始。也可以自己运行命令，再让 agent 打开生成的文件夹。
 
 ## 两个参考案例
 

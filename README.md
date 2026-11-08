@@ -7,6 +7,23 @@ promotions and legal pages. Preview it locally with a working cart and simulated
 
 [Install the skill on skills.sh](https://skills.sh/foundax/agent-store-starter/build-store)
 
+## Start
+
+Paste this prompt into your coding agent in an empty folder:
+
+```text
+Build a complete online store inspired by HUSH. Run the command below in an empty folder, then read AGENTS.md.
+Ask me for the site name, market, currency, languages and business facts. Complete the site, business data,
+local preview and checks. Learn from the reference design and adapt it to my brand.
+
+npx foundax@latest init --showcase hush
+```
+
+Swap `hush` for `strata` to start from the keyboard store instead. You can also run the command yourself and open
+the folder it creates in your agent.
+
+## Demo
+
 [![Watch the complete workflow: your coding agent builds the store, Foundax runs the business](docs/launch-poster.jpg)](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
 
 [Watch the 87-second walkthrough](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
@@ -22,21 +39,6 @@ the recorded payment flow uses a test environment. The opening agent sequence is
 
 A real Codex run, about 8 minutes, sped up: it built Nightfold, a fictional linen store, from the HUSH reference
 and three product photos. [Watch the build recording](docs/build-demo.mp4).
-
-## Start
-
-Paste this prompt into your coding agent in an empty folder:
-
-```text
-Build a complete online store inspired by HUSH. Run the command below in an empty folder, then read AGENTS.md.
-Ask me for the site name, market, currency, languages and business facts. Complete the site, business data,
-local preview and checks. Learn from the reference design and adapt it to my brand.
-
-npx foundax@latest init --showcase hush
-```
-
-Swap `hush` for `strata` to start from the keyboard store instead. You can also run the command yourself and open
-the folder it creates in your agent.
 
 ## Two reference stores
 
