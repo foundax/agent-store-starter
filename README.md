@@ -5,7 +5,7 @@ promotions and legal pages. Preview it locally with a working cart and simulated
 
 [简体中文](README.zh-CN.md)
 
-[![skills.sh](https://skills.sh/b/foundax/agent-store-starter)](https://skills.sh/foundax/agent-store-starter/build-store)
+[Install the skill on skills.sh](https://skills.sh/foundax/agent-store-starter/build-store)
 
 [![Watch the complete workflow: your coding agent builds the store, Foundax runs the business](docs/launch-poster.jpg)](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
 

@@ -5,7 +5,7 @@
 
 [English](README.md)
 
-[![skills.sh](https://skills.sh/b/foundax/agent-store-starter)](https://skills.sh/foundax/agent-store-starter/build-store)
+[通过 skills.sh 安装 skill](https://skills.sh/foundax/agent-store-starter/build-store)
 
 [![观看完整流程：coding agent 搭建店铺，Foundax 承接业务](docs/launch-poster.jpg)](https://media.novariseintl.com/official/open-source/agent-store-starter/20261107-web/demo.mp4)
 
