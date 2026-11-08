@@ -68,9 +68,32 @@ The agent uses two commands while it works:
 
 ## Going live
 
-The preview stays on your machine: no real payments, orders or hosting. To launch, run `npx foundax@latest pack`
-and import the zip from the site list at [foundax.com](https://foundax.com) (requires an account). Foundax then
-handles checkout, orders and hosting, and you keep editing the store visually or with your agent.
+The preview stays on your machine: no real payments, orders or hosting. For direct agent import, sign in at
+[foundax.com](https://foundax.com), open a reference's prompt dialog, choose a workspace and authorize the agent.
+If you started with an authorized prompt, the CLI already saved its authorization. For an existing local build,
+use the authorized prompt's origin and code to connect without replacing your files:
+
+```sh
+npx foundax@latest connect --origin https://foundax.com --code=YOUR_AUTHORIZATION
+npx foundax@latest import --check
+npx foundax@latest import
+```
+
+Server diagnostics go straight to your agent so it can repair and retry without manual uploads. After a timeout,
+run `npx foundax@latest status` before retrying. The CLI synchronizes the local base revision after a committed import.
+If the merchant has edited the project meanwhile, pull its current version into a new folder and merge your changes;
+never change `baseRevisionId` to bypass a version conflict.
+Successful imports return `editorUrl`; recovered imports expose it under `result.editorUrl` in the status response.
+An agent with Computer Use or a browser tool can open that address in your signed-in browser and show the site in
+the editor. Otherwise, follow the returned link yourself.
+An authorization is scoped to one project, lasts 7 days and can be revoked from Settings → Security → Agent
+authorizations or the prompt dialog. The CLI keeps it in `.foundax/authorization.json`, excluded from Git and packages.
+
+Import applies real business data, including on an existing store. Review the resulting site in Foundax, configure
+payments and your domain, complete launch readiness and publish separately. Hosting requires publication entitlement
+and available published-site quota. Unsubscribed accounts have 200 MB of shared storage for media and retained snapshots.
+
+Manual import is also available: run `npx foundax@latest pack` and upload the zip from the Foundax site list.
 
 ## Install as an agent skill
 
@@ -110,3 +133,4 @@ Tell us where the agent got stuck as well: that helps us improve `AGENTS.md` and
 - [Agent-Native Business Environments](https://github.com/foundax/agent-native-business-environments):
   how a business system can become an environment an agent can explore and verify.
 - [Agent Editable UI](https://github.com/foundax/agent-editable-ui): keeping agent-written pages visually editable.
+
